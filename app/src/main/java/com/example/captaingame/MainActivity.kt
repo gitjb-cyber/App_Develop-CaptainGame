@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.captaingame.ui.theme.CaptainGameTheme
@@ -40,7 +41,7 @@ class MainActivity : ComponentActivity() {
         // val 은 변할 수 없지만 변수 안에 넣는 것을 바꾸는 것이 아니라
         // 변수가 내재적으로 무엇인지를 변화시키는 remember states 는 바꿀 수 있음
         // Ex) 변수 안에 상자를 집어 넣는것. 상자는 변하지 않지만, 상자 안의 내용물은 변화 가능
-        // val treasuresFound = remember { mutableStateOf(0) } // 찾은 보물을 기억(값은 가변적인 상태)
+        // val treasuresFound = remember { mutableStateOf(0) }
         var treasuresFound by remember { mutableStateOf(0) } // 찾은 보물을 기억(값은 가변적인 상태)
         val direction = remember { mutableStateOf("North(북쪽)") } // 배가 향하는 방향(북쪽으로 기억)
         val stormOrTreasure = remember { mutableStateOf("") }
